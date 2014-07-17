@@ -11,14 +11,14 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<a href="#" class="navbar-brand"> Treebook</a>
-				<p class="navbar-text"><%= link_to "All Statuses", statuses_path %></p>
+				<p class="navbar-text"><%= link_to "All Statuses", feed_path %></p>
 				<p class="navbar-text navbar-right">
 					<% if user_signed_in? %>
 						<%= link_to current_user.full_name, edit_user_registration_path %>
-						<%= link_to "    Log Out", destroy_user_session_path, method: :delete %>
+						<%= link_to "    Log Out", logout_path %>
 					<% else %>
-						<%= link_to "Register", new_user_registration_path %>
-						<%= link_to "Log In", new_user_session_path %>
+						<%= link_to "Register", register_path %>
+						<%= link_to "Log In", login_path %>
 					<% end %>
 
 				</p>
